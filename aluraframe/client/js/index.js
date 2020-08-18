@@ -64,7 +64,6 @@ campos[2].value = 0;
 /*focus volta o formulario pra onde vc deseja comecar novamente! */
 campos[0].focus()
 
-
 });
 
 /* novo request, totalizacao do volume no rodape! 
