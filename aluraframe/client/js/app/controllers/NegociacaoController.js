@@ -13,6 +13,7 @@ class NegociacaoController {
         this._inputData = $('#data');
         this._inputQuantidade = $('#quantidade');
         this._inputValor = $('#valor');
+        this._listaNegociacoes = new ListaNegociaoes();
         
     }
 
@@ -24,28 +25,15 @@ class NegociacaoController {
         // instanciando a class DataHelper
         event.preventDefault();
 
-        let helper = new DateHelper();
-    
-        let negociacao = new Negociacao(
-            helper.textoParaData(this._inputData.value),
-            this._inputQuantidade.value,
-            this._inputValor.value
-            );
-
-                    console.log( helper.textoParaData(this._inputData.value));
+        // let helper = new DateHelper();
+        //fazendo Lista Negociacoes SEM VARIAVEL! puxando de cria negociacao
+        this._listaNegociacoes.adiciona(this._criaNegociacao());
+        
+        //vai gravar duas negociacoes ??? - TENTANDO EVITAR O PUSH
+        //this._listaNegociacoes.negociacoes.push(this._criaNegociacao());
+        
+        this._limpaFormulario(); 
             
-                    console.log(negociacao);
-                    
-                    console.log(helper);
-
-                    //let helper = new DateHelper();
-
-                    console.log(negociacao.data);
-                    
-                    // pq vc esta instanciando com o helper denovo??
-                    console.log(helper.dataParaTexto(negociacao.data));
-
-
                 // console.log(helper.textoParaData(this._inputData.value));
                     
                 //console.log(dataParaTexto(negociacao.data));
@@ -54,7 +42,21 @@ class NegociacaoController {
 
                 // console.log(this.dataParaTexto(negociacao.data))
     }
-
+    _criaNegociacao() {
+        return new Negociacao(
+            DateHelper.textoParaData(this._inputData.value),
+            this._inputQuantidade.value,
+            this._inputValor.value);
+      }
+    
+    _limpaFormulario() {
+        this._inputData.value = '';
+        this._inputQuantidade.value = 1;
+        this._inputValor.value = 0.0
+    
+        this._inputData.focus();
+    
+                }
 
 
     
