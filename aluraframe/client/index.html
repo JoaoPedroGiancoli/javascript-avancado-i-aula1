@@ -11,7 +11,9 @@
     
     <h1 class="text-center">Negociações</h1>
     
-    <form class="form">
+    /* associacao entre a tag e o js eh feita no js normalmente, mas o angular usa assim
+    No onsubmit voce usa a referencia instancia da classe do script!!!! */
+    <form class="form"  onsubmit="negociacaoController.adiciona(event)">
         
         <div class="form-group">
             <label for="data">Data</label>
@@ -90,9 +92,15 @@
         /* 
         var nao tem escopo de bloco, let tem!
         */
-        for(var i = 1; i <= 100; i++) {
-            console.log(i);
-        }
+    
+    </script>
+    
+    <script src="js/app/controllers/NegociacaoController.js">
+
+    </script>
+
+    <script>
+        let negociacaoController = new NegociacaoController();
 
     </script>
     

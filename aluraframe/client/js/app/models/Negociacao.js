@@ -9,6 +9,7 @@ class Negociacao {
         //this eh uma variavel "implicita" para a referencia
 
         // eu nao vou confiar na data que vc me passou pois eh passivel de lteracao entao vou usar um novo metodo pra data. evito alteracao!
+        //
         this._data = new Date(data.getTime());
         this._quantidade = quantidade;
         this._valor = valor;
