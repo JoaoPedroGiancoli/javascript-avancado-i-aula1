@@ -61,23 +61,22 @@
         </tfoot>
     </table>
 
-    <script src="js/app/models/Negociacao.js"></script>
-
+    
     <script>
-
+        
         /*instanciando toda classe que tenha um construtor eu tenho que invocar com new!
         a instancia do objeto eha acessivel pq eu tenho this que sempre aponta pra instancia da operacao
         */
        /* var n2 = new Negociacao();
-
-
-        var amanha = new Date(); */
-
-        //alterando a data com set Date
-
-
-        /* nao preciso colocar () nos get, pq eu acesso como uma propriedade */
-
+       
+       
+       var amanha = new Date(); */
+       
+       //alterando a data com set Date
+       
+       
+       /* nao preciso colocar () nos get, pq eu acesso como uma propriedade */
+       
         //mano literalmente congela!
         /* 
         Object.freeze(n1);
@@ -87,22 +86,18 @@
         console.log(n1.valor);
         console.log(n1.volume);
         */
-
-
-        /* 
-        var nao tem escopo de bloco, let tem!
-        */
-    
+       
+       
+       /* 
+       var nao tem escopo de bloco, let tem!
+       */
+      
     </script>
     
-    <script src="js/app/controllers/NegociacaoController.js">
-
-    </script>
-
-    <script>
-        let negociacaoController = new NegociacaoController();
-
-    </script>
+    <script src="js/app/helpers/DataHelper.js">    </script>
+    <script src="js/app/models/Negociacao.js"></script>
+    <script src="js/app/controllers/NegociacaoController.js"> </script>
+    <script>let negociacaoController = new NegociacaoController();</script>
     
 </body>
 </html>
